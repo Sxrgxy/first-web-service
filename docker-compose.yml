@@ -1,0 +1,14 @@
+version: '3' #python 3
+services:
+  flask:
+    build: . #строить контейнер из корневой папки
+    command: gunicorn -b 0.0.0.0:5000 hello:app --reload #remote/local server with an autoupdate feature
+    #command: flask run --host=0.0.0.0
+    environment:
+      - FLASK_APP=hello #which app should flask run
+      - FLASK_DEBUG=1 #auto-change of app on server after code change
+      - PYTHONUNBUFFERED=True #a debugging tool with a print terminal display
+    ports:
+      - '5000:5000' #local port address localhost
+    volumes: 
+      - ./:/root #directory to save all changes
