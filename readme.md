@@ -10,3 +10,10 @@ curl --header "Content-Type: application/json" \
   --request POST \
   --data '{"flower":"1,2,3,4"}' \ 
   http://localhost:5000/iris_post
+# GitHub
+git init
+git add .
+git commit -m 'initial commit'
+git remote add origin https://github.com/Sxrgxy/first-web-service.git
+git branch -M main
+git push -u origin main
